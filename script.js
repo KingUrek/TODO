@@ -2,6 +2,8 @@ let root =document.documentElement;
 
 let selectedFilter;
 let isAnyFilterSelected;
+
+let themeLink = document.getElementById("theme-link");
 function filterDisplay(filter,target) {
 
     if (target.classList.contains("t-selected")){
@@ -42,10 +44,51 @@ function filterDisplay(filter,target) {
 }
 
 
+let profilePicture=document.getElementById("profile-picture-id");
+function changeTheme(theme) {
+    localStorage.setItem("theme",theme);
+    let gender = localStorage.getItem("gender");
+
+    if(theme == "trybe"){
+        themeLink.setAttribute("href","trybe-theme.css")
+
+        if (gender == "M"){
+            profilePicture.src = "Imagens/male-trybe-theme.svg"
+        }
+
+        if(gender == "F"){
+            profilePicture.src = "Imagens/female-trybe-theme.svg";
+        }
+    }
+
+
+
+    else if(theme == "cyberpunk"){
+        themeLink.setAttribute("href","cyperpunk-css.css")
+
+        if (gender == "M"){
+            profilePicture.src = "Imagens/man.svg"
+        }
+
+        if(gender == "F"){
+            profilePicture.src = "Imagens/woman.svg";
+        }
+    }
+
+
+}
 function inicializePage(){
 
     let name = localStorage.getItem("name");
     let gender = localStorage.getItem("gender");
+    let theme = localStorage.getItem("theme");
+
+    if (!theme){
+        theme = "cyberpunk"
+        localStorage.setItem("theme","cyberpunk")
+    }
+
+
 
     if(name && gender){
         let profilePicture=document.getElementById("profile-picture-id");
@@ -65,19 +108,39 @@ function inicializePage(){
         textContainer.innerHTML= `<p class="profile-text">Good ${period}, ${name}</p>
         <p class="profile-date"><span class="date-day">${date[0]}</span>,${date[1]} ${date[2]}</p>`
 
-        if (gender == "M"){
-            profilePicture.src = "Imagens/male-trybe-theme.svg"
+
+        if (theme == "trybe")
+        {
+            themeLink.setAttribute("href","trybe-theme.css")
+
+            if (gender == "M"){
+                profilePicture.src = "Imagens/male-trybe-theme.svg"
+            }
+
+            if(gender == "F"){
+                profilePicture.src = "Imagens/female-trybe-theme.svg";
+            }
         }
 
-        if(gender == "F"){
-            profilePicture.src = "Imagens/female-trybe-theme.svg";
+        else if(theme == "cyberpunk")
+        {
+            themeLink.setAttribute("href","cyperpunk-css.css")
+            if (gender == "M"){
+                profilePicture.src = "Imagens/man.svg"
+            }
+
+            if(gender == "F"){
+                profilePicture.src = "Imagens/woman.svg";
+            }
         }
+
+
+
+
 
     }
 
     else{
-        console.log("abrindo")
-
         signInFormsOpener();
 
     }
@@ -122,8 +185,16 @@ function selectIcon(target) {
     selectedIcon = target;
 }
 
+// for(let icon of document.getElementsByClassName("sidebar-item")){
+//     icon.setAttribute("onclick","selectIcon(this)");
+// }
+
 for(let icon of document.getElementsByClassName("sidebar-item")){
-    icon.setAttribute("onclick","selectIcon(this)");
+    icon.addEventListener("click",function ()
+    {
+        selectIcon(this);
+
+    });
 }
 
 

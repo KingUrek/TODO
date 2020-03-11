@@ -1,18 +1,17 @@
-
 :root{
     --margin-top-main:30px;
     --text-searchbar-color: #808080;
 
 
-    --maincontainer-color: rgba(21,22,22,0.8);
+    --maincontainer-color:#151616;
     --sidebar-color:#151616;
-    --sidebar-icons-color: #FF2F8B;
-    --sidebar-selected-mark-color: #CE2625;
+    --sidebar-icons-color:#0FEA76;
+    --sidebar-selected-mark-color:#47CEB5;
 
-    --profile-date-color: #FF3C55;
-    --add-button-color: #2E65A3;
+    --profile-date-color: #151616;
+    --add-button-color:#0FA36B;
 
-    --task-container-color: #31CE38;
+    --task-container-color:#47CEB5;
 
     --sidebar-font-color: #ffffff;
 
@@ -26,7 +25,7 @@
 
 
 
-    --background-color:url("Imagens/cyberpunk-theme-BG .png");
+    --background-color:url("Imagens/TrybeThemeBG (2).png");
 
 
 }
@@ -77,19 +76,14 @@ nav.sidebar {
 
 .selected .sidebar-icon{
     padding-left: 6px !important;
-    color: #FF1D33;
-    text-shadow: 0px 0px 4px #FF0000;
 }
 
 .selected .sidebar-link-text{
     margin-left: 55px !important;
-    color: #FF1D33;
-    text-shadow: 0px 0px 4px #FF0000;
 }
 .sidebar-link{
     text-decoration: none;
     color:var(--sidebar-icons-color);
-    text-shadow: 0px 0px 4px #FF0000;
     display: flex;
     position: relative;
     height: 34px;
@@ -153,8 +147,7 @@ div.icon:hover {
 }
 
 p.profile-text {
-    color: #ADE5FF;
-    text-shadow: 0px 0px 4px #0E88FF;
+    color: white;
     font-size: 42px;
     font-family: Roboto, Serif;
     font-style: normal;
@@ -165,7 +158,6 @@ p.profile-date {
     font-size: 20px;
     font-family: Roboto, serif;
     font-style: normal;
-    text-shadow: 0px 0px 4px #FF0000;;
 }
 
 #text-container {
@@ -179,7 +171,6 @@ span.date-day {
 
 .sidebar-text-icon{
     margin-right: 20px;
-
 }
 
 
@@ -225,7 +216,7 @@ div.add-button{
     width: 270px;
     height: 60px;
     background: var(--add-button-color) ;
-    box-shadow: 0px 0px 8px 1px rgb(39, 50, 255);
+    box-shadow: -1px 5px 6px rgba(0, 0, 0, 0.25);
     margin-left: auto;
     margin-right: auto;
     margin-top:var(--margin-top-main);
@@ -242,8 +233,6 @@ div.add-button{
 .add-button-icon{
     font-size: 30px;
     margin-right: 20px;
-    color: #FFD730;
-    text-shadow: 0px 0px 4px #FFD100;
 }
 
 .add-button-text{
@@ -251,8 +240,7 @@ div.add-button{
     margin-top: auto;
     margin-bottom: auto;
     font-family: Roboto, serif;
-    color: #FFD730;
-    text-shadow: 0px 0px 4px #FFD100;
+    text-shadow: 1px 1px 6px black;
 }
 
 div.horizontal-line{
@@ -354,7 +342,7 @@ li.task{
     display: flex;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 0 4px 1px rgb(0, 206, 6);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     /*transition: all 1s ease;*/
 
 
@@ -417,11 +405,3 @@ li.task{
 .t-selected{
     background-color: grey;
 }
-
-
-
-
-
-
-
-
